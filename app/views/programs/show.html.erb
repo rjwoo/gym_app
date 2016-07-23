@@ -1,0 +1,3 @@
+<h1><%= @program.program_name %></h1>
+<p><%= link_to "Edit", edit_program_path(@program) %> |
+   <%= link_to "Delete", @program, method: :delete, data: {confirm: "Are you sure?"} %></p>
