@@ -1,0 +1,5 @@
+<%= form_for [@program, @day] do |f| %>
+  <%= f.label :day_number, "Workout Title" %>
+  <%= f.text_field :day_number, placeholder: "Day 1, Push, etc." %>
+  <%= f.submit "Save Workout" %>
+<% end %>

@@ -1,0 +1,16 @@
+<div>
+  <%= r.label :exercise_name, "Exercise Name" %>
+  <%= r.text_field :exercise_name, placeholder: "ex. Bench Press" %>
+  <%= r.label :sets, "Number of Sets" %>
+  <%= r.text_field :sets %>
+  <%= r.checkbox :_destroy %>
+</div>
+
+
+<div id="exercises">
+  <%#= f.fields_for :exercises do |r| %>
+    <%#= render "exercise_fields", f: r %>
+  <%# end %>
+
+  <%#= link_to_add_association 'add exercise', f, :exercises %>
+</div>

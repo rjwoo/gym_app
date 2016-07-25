@@ -10,6 +10,7 @@ class ProgramsController < ApplicationController
     @program = Program.new(program_params)
     if @program.save
       redirect_to programs_path, notice: "You have created a new program!"
+      # Upon creation of PROGRAM, should link to new DAY form  
     else
       render :new
     end
@@ -20,6 +21,7 @@ class ProgramsController < ApplicationController
   end
 
   def show
+    @day = Day.new
   end
 
   def edit
