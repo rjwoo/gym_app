@@ -1,13 +1,15 @@
 <div>
   <h1><%= @program.program_name %></h1> <%= link_to "Add Another Workout", new_program_day_path(@program) %>
-  <p><%= link_to "Edit", edit_program_path(@program) %> |
-     <%= link_to "Delete", @program, method: :delete, data: {confirm: "Are you sure?"} %></p>
+  <p><%= link_to "Edit Program Name", edit_program_path(@program) %> |
+     <%= link_to "Delete Entire Program", @program, method: :delete, data: {confirm: "Are you sure?"} %></p>
   <hr>
 </div>
 
 <div>
   <% @program.days.each do |day| %>
     <p><%= link_to day.day_number, program_day_path(@program, day) %></p>
+    <p><%= link_to "Edit", edit_program_day_path(@program, day) %> |
+       <%= link_to "Delete",  %>
     <hr>
   <% end %>
 </div>
