@@ -1,13 +1,9 @@
 <div>
-  <h1><%= @program.program_name %></h1>
+  <h1><%= @program.program_name %></h1> <%= link_to "Add Another Workout", new_program_day_path(@program) %>
   <p><%= link_to "Edit", edit_program_path(@program) %> |
      <%= link_to "Delete", @program, method: :delete, data: {confirm: "Are you sure?"} %></p>
   <hr>
 </div>
-
-<h2>Add Workout</h2>
-
-<%= render "days/form" %>
 
 <div>
   <% @program.days.each do |day| %>
