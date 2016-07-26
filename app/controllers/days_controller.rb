@@ -1,11 +1,10 @@
 class DaysController < ApplicationController
-  # before_action :day_params only: [:create]
-
-  DEFAULT_EXERCISE_COUNT = 1
+  before_action :day_params, only: [:create]
 
   def new
+    @program = Program.find params[:program_id]
     @day = Day.new
-    DEFAULT_EXERCISE_COUNT.times { @day.exercises.build }
+    3.times { @day.exercises.build }
   end
 
   def create
@@ -13,14 +12,16 @@ class DaysController < ApplicationController
     @day = Day.new day_params
     @day.program = @program
     if @day.save
-      redirect_to program_path(@program), notice: "Empty Workout Created!"
+      redirect_to program_path(@program), notice: "Workout Created!"
     else
+      (DEFAULT_EXERCISE_COUNT - @day.exercises.size).times { @day.exercises.build }
       render "/programs/show"
     end
   end
 
   def show
     @day = Day.find params[:id]
+    @exercises = @day.exercises
   end
 
   private

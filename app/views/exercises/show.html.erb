@@ -1,0 +1,3 @@
+<h1><%= @exercise.exercise_name %></h1>
+<p>Sets: <%= @exercise.sets %></p>
+<%= link_to "Edit", edit_exercise_path(@exercise) %> | <%= link_to "Delete", exercise_path(@exercise), method: :delete, data: {confirm: "Are you sure?"} %>

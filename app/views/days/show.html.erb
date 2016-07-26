@@ -1,1 +1,7 @@
-<h1><%= @day.day_number %> Day</h1>
+<h1><%= @day.day_number %></h1>
+<% @exercises.each do |exercise| %>
+  <div>
+    <h3><%= exercise.exercise_name %></h3>
+    <p>Sets: <%= exercise.sets %></p>
+  </div>
+<% end %>

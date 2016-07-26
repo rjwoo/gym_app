@@ -1,15 +1,13 @@
-<h1><%= @program.program_name %></h1>
-<p><%= link_to "Edit", edit_program_path(@program) %> |
-   <%= link_to "Delete", @program, method: :delete, data: {confirm: "Are you sure?"} %></p>
+<div>
+  <h1><%= @program.program_name %></h1>
+  <p><%= link_to "Edit", edit_program_path(@program) %> |
+     <%= link_to "Delete", @program, method: :delete, data: {confirm: "Are you sure?"} %></p>
+  <hr>
+</div>
 
 <h2>Add Workout</h2>
-<%= form_for [@program, @day] do |f| %>
-  <div id="days">
-    <%= f.label :day_number, "Workout Title" %>
-    <%= f.text_field :day_number, placeholder: "Day 1, Push, etc." %>
-  </div>
-  <%= f.submit "Save Workout" %>
-<% end %>
+
+<%= render "days/form" %>
 
 <div>
   <% @program.days.each do |day| %>
