@@ -30,7 +30,7 @@ gem 'cocoon'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'simple_form'
 gem "font-awesome-rails"
-
+gem 'twilio-ruby'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
