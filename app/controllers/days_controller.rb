@@ -17,7 +17,7 @@ class DaysController < ApplicationController
       redirect_to program_path(@program), notice: "Workout Created!"
     else
       (DEFAULT_EXERCISE_COUNT - @day.exercises.size).times { @day.exercises.build }
-      render "/programs/show"
+      render "/days/new"
     end
   end
 
