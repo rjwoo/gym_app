@@ -9,7 +9,7 @@
 
 <div>
   <% @program.days.each do |day| %>
-    <p><%= link_to day.day_number, program_day_path(@program, day) %></p>
+    <p><%= link_to day.day_number, new_day_workout_log_path(day) %></p>
     <hr>
   <% end %>
 </div>

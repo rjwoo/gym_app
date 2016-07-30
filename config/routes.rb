@@ -14,6 +14,9 @@ Rails.application.routes.draw do
 
   resources :days, only: [] do
     resources :exercises
+    resources :workout_logs
   end
+
+
 
 end
