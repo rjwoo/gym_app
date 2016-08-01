@@ -38,6 +38,16 @@ class DaysController < ApplicationController
     @days = Day.all
   end
 
+  def edit
+    @day = Day.find params[:id]
+  end
+
+  # def destroy
+  #   @day = Day.find params[:id]
+  #   @day.destroy
+  #   redirect_to program_path, notice: "Workout Deleted!"
+  # end
+
   private
 
   def day_params
