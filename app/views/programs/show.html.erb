@@ -9,8 +9,9 @@
 
 <div>
   <% @program.days.each do |day| %>
-    <h3><%= link_to day.day_number, new_day_workout_log_path(day) %></h3>
-    <p><%#= link_to "Edit Workout", edit_program_day_path(@program, day) %> 
+    <h3><%= day.day_number %></h3>
+    <p><%= link_to "View Details", program_day_path(@program, day) %> | <%= link_to "Start Workout", new_day_exercise_path(day, @exercise) %></p>
+    <p><%#= link_to "Edit Workout", edit_program_day_path(@program, day) %>
     <%#= link_to "Delete Workout", day, method: :delete, data: {confirm: "Are you sure?"} %></p>
     <hr>
   <% end %>

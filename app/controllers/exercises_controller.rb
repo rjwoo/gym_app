@@ -3,12 +3,12 @@ class ExercisesController < ApplicationController
   before_action :exercise_params, only: [:create, :update]
 
   def new
+    @day = Day.find params[:day_id]
     @exercise = Exercise.new
   end
 
   def create
     @day = Day.find params[:day_id]
-    @program = @day.program
     @exercise = Exercise.new exercise_params
     @exercise.day = @day
     if @exercise.save
@@ -19,6 +19,7 @@ class ExercisesController < ApplicationController
   end
 
   def show
+    @exercise.day = @day
   end
 
   def edit

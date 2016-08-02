@@ -1,10 +1,14 @@
-<h1>Create Exercise</h1>
-
-<%= simple_form_for @exercise do |f| %>
-  <div>
-    <%= f.input :exercise_name %>
-    <%= f.input :set %>
-    <%= link_to_remove_association "remove exercise", f %>
-  </div>
-  <%= f.button :submit, class: "btn btn-primary" %>
+<h1><%= @day.day_number %></h1>
+<hr>
+<%= simple_form_for [@day, @exercise] do |f| %>
+  <% @day.exercises.each do |exercise| %>
+    <!-- <div> -->
+      <h3><%= exercise.exercise_name %></h3>
+      <%#= f.simple_fields_for :exercises do |r| %>
+        <%#= render "workout_logs" , f: r%>
+      <%# end %>
+    <!-- </div> -->
+    <hr>
+  <% end %>
+  <%= f.button :submit, "Finish Workout" %>
 <% end %>

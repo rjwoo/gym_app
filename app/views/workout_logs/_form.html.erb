@@ -1,4 +1,4 @@
-<%= simple_form_for [@day, @workout_log] do |f| %>
+<%= simple_form_for [@exercise, @workout_log] do |f| %>
   <% @day.exercises.each do |exercise| %>
     <h2><%= exercise.exercise_name %></h2>
     <div>

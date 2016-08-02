@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160730020412) do
+ActiveRecord::Schema.define(version: 20160802044423) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,10 @@ ActiveRecord::Schema.define(version: 20160730020412) do
     t.integer  "day_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.integer  "reps"
+    t.float    "weight"
+    t.integer  "sets"
+    t.float    "volume"
   end
 
   add_index "exercises", ["day_id"], name: "index_exercises_on_day_id", using: :btree
@@ -50,25 +54,17 @@ ActiveRecord::Schema.define(version: 20160730020412) do
     t.string   "password_digest"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.string   "phone_number"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
   create_table "workout_logs", force: :cascade do |t|
-    t.integer  "reps"
-    t.float    "weight"
-    t.integer  "sets"
-    t.float    "volume"
-    t.integer  "day_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "date"
   end
-
-  add_index "workout_logs", ["day_id"], name: "index_workout_logs_on_day_id", using: :btree
 
   add_foreign_key "days", "programs"
   add_foreign_key "exercises", "days"
   add_foreign_key "programs", "users"
-  add_foreign_key "workout_logs", "days"
 end
