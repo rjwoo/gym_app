@@ -1,1 +1,4 @@
-<h1><%= @workout_log.day.day_number %> - <%= @workout_log.created_at %></h1>
+<h1>
+  <%= @workout_log.day.day_number %>
+  (<%= @workout_log.created_at.strftime("%A %b-%H") %>)
+</h1>
