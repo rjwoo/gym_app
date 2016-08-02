@@ -1,8 +1,7 @@
 <%= @program.errors.full_messages.join(", ") %>
-<%= form_for @program do |f| %>
+<%= simple_form_for @program do |f| %>
   <div>
-    <%= f.label :program_name, "Program Name" %>
-    <%= f.text_field :program_name %>
+    <%= f.input :program_name %>
   </div>
-  <%= f.submit %>
+  <%= f.button :submit %>
 <% end %>

@@ -1,0 +1,11 @@
+<%= simple_form_for [@day, @workout_log] do |f| %>
+  <% @day.exercises.each do |exercise| %>
+    <h2><%= exercise.exercise_name %></h2>
+    <div>
+      <%= f.input :reps %>
+      <%= f.input :weight %>
+    </div>
+    <hr>
+  <% end %>
+  <%= f.button :submit, "Finish Workout" %>
+<% end %>

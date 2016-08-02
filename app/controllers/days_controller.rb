@@ -51,7 +51,7 @@ class DaysController < ApplicationController
   private
 
   def day_params
-    day_params = params.require(:day).permit(:day_number, {exercises_attributes: [:exercise_name, :sets, :id, :_destroy]})
+    params.require(:day).permit(:day_number, {exercises_attributes: [:exercise_name, :id, :_destroy]})
   end
 
 end

@@ -1,9 +1,3 @@
 <h1><%= @workout_log.day.day_number %> - New Workout</h1>
 
-<% @day.exercises.each do |exercise| %>
-  <h2><%= exercise.exercise_name %></h2>
-  <%= simple_form_for :workout_log do |f| %>
-    <%= f.input :reps %>
-    <%= f.input :weight %>
-  <% end %>
-<% end %>
+<%= render "form" %>
